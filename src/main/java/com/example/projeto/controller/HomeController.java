@@ -1,4 +1,4 @@
-package com.fatec.loja.controller;
+package com.example.projeto.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,11 +13,7 @@ public class HomeController {
     @GetMapping("/departamento/{nomeDepartamento}")
     public String departamento(@PathVariable String nomeDepartamento, ModelMap model) {
         model.addAttribute("nome", nomeDepartamento);
-
-        if(nomeDepartamento == "lanche"){
-            factory(nomeDepartamento);
-        }
-        return nomeDepartamento;
+        return factory(nomeDepartamento);
     }
 
     @GetMapping
